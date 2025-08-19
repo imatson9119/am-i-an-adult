@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Am I An Adult? - Adulting Scorecard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧑‍💼 Am I An Adult?</h1>
+            <p>Check off the items that apply to you and see how "adult" you really are!</p>
+        </header>
+
+        <div class="score-section">
+            <div class="score-display">
+                <div class="score-circle">
+                    <span class="score-number" id="currentScore">0</span>
+                    <span class="score-label">points</span>
+                </div>
+                <div class="score-bar-container">
+                    <div class="score-bar" id="scoreBar"></div>
+                    <div class="score-percentage" id="scorePercentage">0%</div>
+                </div>
+            </div>
+            <div class="adult-level">
+                <span id="adultLevel">Baby Adult</span>
+            </div>
+        </div>
+
+        <div class="checklist-container">
+            <h2>Adulting Checklist</h2>
+            <form id="adultingForm">
+                <div class="category">
+                    <h3>📅 Age Milestones</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="20">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Is at least 18</span>
+                            <span class="points">+20</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="20">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Is at least 30</span>
+                            <span class="points">+20</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="20">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Is at least 40</span>
+                            <span class="points">+20</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="20">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Is at least 50</span>
+                            <span class="points">+20</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="20">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Is at least 60</span>
+                            <span class="points">+20</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>🎓 Education</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="5">
+                            <span class="checkmark"></span>
+                            <span class="item-text">HS diploma</span>
+                            <span class="points">+5</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="10">
+                            <span class="checkmark"></span>
+                            <span class="item-text">College degree</span>
+                            <span class="points">+10</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>💼 Career</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="5">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Part-time job</span>
+                            <span class="points">+5</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="10">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Full-time job</span>
+                            <span class="points">+10</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="5">
+                            <span class="checkmark"></span>
+                            <span class="item-text">First promotion</span>
+                            <span class="points">+5</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="15">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Business owner</span>
+                            <span class="points">+15</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>👨‍👩‍👧‍👦 Family</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="10">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Marriage</span>
+                            <span class="points">+10</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="10">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Kids</span>
+                            <span class="points">+10</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>🏠 Housing</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="5">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Renter</span>
+                            <span class="points">+5</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="15">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Homeowner</span>
+                            <span class="points">+15</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>🚗 Transportation</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="5">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Driver's license</span>
+                            <span class="points">+5</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="5">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Car owner</span>
+                            <span class="points">+5</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="2">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Car insurance</span>
+                            <span class="points">+2</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>🏠 Household Management</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="2">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Does own laundry regularly</span>
+                            <span class="points">+2</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="3">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Grocery shops and meal plans</span>
+                            <span class="points">+3</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>💰 Financial</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="5">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Retirement account</span>
+                            <span class="points">+5</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="5">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Files own taxes</span>
+                            <span class="points">+5</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="5">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Holds to a budget</span>
+                            <span class="points">+5</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="5">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Has good credit score (700+)</span>
+                            <span class="points">+5</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="8">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Has written will/estate plan</span>
+                            <span class="points">+8</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>🛡️ Insurance & Plans</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="2">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Phone plan</span>
+                            <span class="points">+2</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="5">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Home insurance</span>
+                            <span class="points">+5</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="5">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Life insurance</span>
+                            <span class="points">+5</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>🌐 Digital Adulting</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="3">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Uses a password manager</span>
+                            <span class="points">+3</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>🗳️ Civic Engagement</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="5">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Votes in presidential elections</span>
+                            <span class="points">+5</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>🏥 Health</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="5">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Annual check-up</span>
+                            <span class="points">+5</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-score="5">
+                            <span class="checkmark"></span>
+                            <span class="item-text">Annual teeth-cleaning</span>
+                            <span class="points">+5</span>
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <p>Maximum possible score: <span id="maxScore">258</span> points</p>
+            <p>Remember: Being an adult is more than just checking boxes! 😊</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
