@@ -1,7 +1,8 @@
 class AdultingScorecard {
     constructor() {
         this.currentScore = 0;
-        this.maxScore = 258; // Sum of all possible points
+        this.maxScore = 265; // Sum of all possible positive points
+        this.minScore = -22; // Sum of all possible penalties
         this.checkboxes = document.querySelectorAll('input[type="checkbox"]');
         this.scoreDisplay = document.getElementById('currentScore');
         this.scoreBar = document.getElementById('scoreBar');
@@ -10,13 +11,15 @@ class AdultingScorecard {
         this.scoreCircle = document.querySelector('.score-circle');
         
         this.adultLevels = [
-            { min: 0, max: 35, level: "Baby Adult", emoji: "👶" },
-            { min: 36, max: 70, level: "Teenage Adult", emoji: "🧑‍🎓" },
-            { min: 71, max: 110, level: "Young Adult", emoji: "🧑‍💼" },
-            { min: 111, max: 155, level: "Proper Adult", emoji: "👨‍💻" },
-            { min: 156, max: 200, level: "Super Adult", emoji: "🦸‍♀️" },
+            { min: -22, max: -10, level: "Child in Adult Body", emoji: "👶😱" },
+            { min: -9, max: 0, level: "Struggling Adult", emoji: "😅" },
+            { min: 1, max: 40, level: "Baby Adult", emoji: "👶" },
+            { min: 41, max: 80, level: "Teenage Adult", emoji: "🧑‍🎓" },
+            { min: 81, max: 120, level: "Young Adult", emoji: "🧑‍💼" },
+            { min: 121, max: 160, level: "Proper Adult", emoji: "👨‍💻" },
+            { min: 161, max: 200, level: "Super Adult", emoji: "🦸‍♀️" },
             { min: 201, max: 245, level: "Ultra Adult", emoji: "👑" },
-            { min: 246, max: 258, level: "Legendary Adult", emoji: "🏆" }
+            { min: 246, max: 265, level: "Legendary Adult", emoji: "🏆" }
         ];
         
         this.init();
@@ -59,10 +62,17 @@ class AdultingScorecard {
         
         this.scoreDisplay.textContent = this.currentScore;
         
-        // Update progress bar
-        const percentage = Math.round((this.currentScore / this.maxScore) * 100);
-        this.scoreBar.style.setProperty('--progress', `${percentage}%`);
-        this.scorePercentage.textContent = `${percentage}%`;
+        // Update progress bar - positive scores fill the bar, negative scores show as negative percentage
+        if (this.currentScore >= 0) {
+            const percentage = Math.round((this.currentScore / this.maxScore) * 100);
+            this.scoreBar.style.setProperty('--progress', `${Math.min(100, percentage)}%`);
+            this.scorePercentage.textContent = `${Math.min(100, percentage)}%`;
+        } else {
+            // For negative scores, show 0% progress but display negative percentage
+            this.scoreBar.style.setProperty('--progress', '0%');
+            const negativePercentage = Math.round((this.currentScore / Math.abs(this.minScore)) * 100);
+            this.scorePercentage.textContent = `${negativePercentage}%`;
+        }
         
         // Update adult level
         this.updateAdultLevel();
@@ -91,16 +101,19 @@ class AdultingScorecard {
             
             // Add special styling based on level
             this.adultLevel.className = 'adult-level';
-            if (this.currentScore >= 180) {
+            if (this.currentScore >= 201) {
                 this.adultLevel.style.background = 'linear-gradient(45deg, #FFD700, #FFA500)';
                 this.adultLevel.style.webkitBackgroundClip = 'text';
                 this.adultLevel.style.webkitTextFillColor = 'transparent';
                 this.adultLevel.style.fontWeight = '700';
-            } else if (this.currentScore >= 140) {
+            } else if (this.currentScore >= 121) {
                 this.adultLevel.style.color = '#28a745';
                 this.adultLevel.style.fontWeight = '600';
-            } else {
+            } else if (this.currentScore >= 1) {
                 this.adultLevel.style.color = '#667eea';
+                this.adultLevel.style.fontWeight = '600';
+            } else {
+                this.adultLevel.style.color = '#dc3545';
                 this.adultLevel.style.fontWeight = '600';
             }
         }

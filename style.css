@@ -20,7 +20,6 @@ body {
     background: white;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
 }
 
 /* Header */
@@ -29,6 +28,7 @@ header {
     color: white;
     text-align: center;
     padding: 40px 20px;
+    border-radius: 20px 20px 0 0;
 }
 
 header h1 {
@@ -48,6 +48,11 @@ header p {
     padding: 30px 20px;
     text-align: center;
     border-bottom: 1px solid #e9ecef;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .score-display {
@@ -239,6 +244,12 @@ header p {
     border: 1px solid #c3e6cb;
 }
 
+.points.penalty {
+    color: #dc3545;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
 /* Footer */
 footer {
     background: #f8f9fa;
@@ -246,6 +257,7 @@ footer {
     text-align: center;
     color: #666;
     border-top: 1px solid #e9ecef;
+    border-radius: 0 0 20px 20px;
 }
 
 footer p {
@@ -270,6 +282,10 @@ footer p {
     
     header p {
         font-size: 1rem;
+    }
+    
+    .score-section {
+        padding: 20px 15px;
     }
     
     .score-display {
@@ -314,6 +330,27 @@ footer p {
     
     header h1 {
         font-size: 1.8rem;
+    }
+    
+    .score-section {
+        padding: 15px 10px;
+    }
+    
+    .score-display {
+        gap: 15px;
+    }
+    
+    .score-circle {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .score-number {
+        font-size: 1.5rem;
+    }
+    
+    .adult-level {
+        font-size: 1.2rem;
     }
     
     .checklist-container {

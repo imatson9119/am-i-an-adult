@@ -7,7 +7,7 @@ A fun, interactive web application that lets you measure your "adultness" by che
 - **Interactive Checklist**: 25 different adult milestones organized by category
 - **Real-time Scoring**: Watch your score update instantly as you check items
 - **Visual Progress**: Beautiful progress bar and score circle with animations
-- **Adult Levels**: Progress from "Baby Adult" to "Legendary Adult" 
+- **Adult Levels**: Progress from "Baby Adult" to "Legendary Adult"
 - **Responsive Design**: Works perfectly on desktop, tablet, and mobile
 - **Local Storage**: Your progress is automatically saved
 - **Score Sharing**: Share your adulting achievements
@@ -15,25 +15,36 @@ A fun, interactive web application that lets you measure your "adultness" by che
 
 ## 🎯 Scoring System
 
-The app uses a weighted scoring system where different achievements have different point values:
+The app uses a weighted scoring system where different achievements have different point values, including penalties for less "adult" behaviors:
+
+**Positive Points:**
 
 - **Age Milestones** (20 points each): Being 18+, 30+, 40+, 50+, 60+
 - **Major Life Events** (10-15 points): Full-time job, marriage, kids, homeownership, business ownership
 - **Education & Career** (5-10 points): High school diploma, college degree, part-time job, promotion
-- **Financial Responsibility** (2-5 points): Insurance, retirement accounts, budgeting, taxes
-- **Basic Adult Tasks** (2-5 points): Driver's license, phone plan, health checkups
+- **Financial Responsibility** (2-8 points): Insurance, retirement accounts, budgeting, taxes, credit score, estate planning
+- **Basic Adult Tasks** (2-5 points): Driver's license, phone plan, health checkups, household management
+- **Digital Responsibility** (2-5 points): Password managers, appropriate social media use
 
-**Maximum Possible Score**: 232 points
+**Penalties:**
+
+- **Social Media Immaturity** (-3 to -10 points): Snapchat, Instagram usage
+- **Financial Poor Choices** (-2 points): Owning meme cryptocurrencies
+- **Adult Failures** (-2 to -8 points): Various humorous "non-adult" behaviors
+
+**Score Range**: -53 to +265 points
 
 ## 🏆 Adult Levels
 
-- 👶 **Baby Adult** (0-30 points)
-- 🧑‍🎓 **Teenage Adult** (31-60 points)  
-- 🧑‍💼 **Young Adult** (61-100 points)
-- 👨‍💻 **Proper Adult** (101-140 points)
-- 🦸‍♀️ **Super Adult** (141-180 points)
-- 👑 **Ultra Adult** (181-220 points)
-- 🏆 **Legendary Adult** (221-232 points)
+- 👶😱 **Child in Adult Body** (-53 to -20 points)
+- 😅 **Struggling Adult** (-19 to 0 points)
+- 👶 **Baby Adult** (1-40 points)
+- 🧑‍🎓 **Teenage Adult** (41-80 points)
+- 🧑‍💼 **Young Adult** (81-120 points)
+- 👨‍💻 **Proper Adult** (121-160 points)
+- 🦸‍♀️ **Super Adult** (161-200 points)
+- 👑 **Ultra Adult** (201-245 points)
+- 🏆 **Legendary Adult** (246-265 points)
 
 ## 🚀 Getting Started
 
@@ -59,6 +70,7 @@ The app uses a weighted scoring system where different achievements have differe
 ## 📱 Browser Support
 
 Works in all modern browsers:
+
 - Chrome 60+
 - Firefox 55+
 - Safari 12+
